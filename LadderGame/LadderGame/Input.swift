@@ -17,7 +17,12 @@ struct Input {
     func inputNumberOfPlayer() -> (height, numberOfPlayer) {
         print("참여할 인원수를 적어주세요. (2~8명)")
         let numberOfPlayer = Int(readLine() ?? "") ?? 0 // 사용자 수 입력 받기.
-        exception.precondition(numberOfPlayer: numberOfPlayer) // 입력받은 사용자 수 예외처리!
+        do {
+            try exception.precondition(numberOfPlayer: numberOfPlayer) // 입력받은 사용자 수 예외처리!
+        } catch {
+            print("참여 수가 맞지 않습니다. 다시 시작해주세요.")
+            start()
+        }
         return makeLadderInfo(numberOfPlayer) //예외처리가 문제없으면 makeLadderInfo를 통해 넘겨 줄 (사다리 높이, 인원 수)tuple값 생성
     }
     

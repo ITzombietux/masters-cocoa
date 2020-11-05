@@ -8,15 +8,18 @@
 
 import Foundation
 
+enum ExceptionType: Error {
+    case minimumNumberOfPlayer
+    case maximumNumberOfPlayer
+}
+
 struct Exception {
-    func precondition(numberOfPlayer condition: Int) {
+    func precondition(numberOfPlayer condition: Int) throws {
         switch condition {
         case ..<2:
-            print("최소 인원은 2명 이상입니다.")
-            return
+            throw ExceptionType.minimumNumberOfPlayer
         case 9...:
-            print("최대 인원은 8명 이상입니다.")
-            return
+            throw ExceptionType.maximumNumberOfPlayer
         default:
             print("사다리게임 가능합니다.")
         }
