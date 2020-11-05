@@ -10,6 +10,8 @@
 		93B94D482553D8D000281391 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B94D472553D8D000281391 /* main.swift */; };
 		93B94D4F2553DA2600281391 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B94D4E2553DA2600281391 /* Input.swift */; };
 		93B94D542553E51300281391 /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B94D532553E51300281391 /* Exception.swift */; };
+		93B94D562553E99A00281391 /* Ladder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B94D552553E99A00281391 /* Ladder.swift */; };
+		93B94D582553EB5C00281391 /* PrintLadder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B94D572553EB5C00281391 /* PrintLadder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,8 @@
 		93B94D472553D8D000281391 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		93B94D4E2553DA2600281391 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		93B94D532553E51300281391 /* Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
+		93B94D552553E99A00281391 /* Ladder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ladder.swift; sourceTree = "<group>"; };
+		93B94D572553EB5C00281391 /* PrintLadder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintLadder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				93B94D472553D8D000281391 /* main.swift */,
 				93B94D4E2553DA2600281391 /* Input.swift */,
 				93B94D532553E51300281391 /* Exception.swift */,
+				93B94D552553E99A00281391 /* Ladder.swift */,
+				93B94D572553EB5C00281391 /* PrintLadder.swift */,
 			);
 			path = LadderGame;
 			sourceTree = "<group>";
@@ -127,8 +133,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B94D542553E51300281391 /* Exception.swift in Sources */,
+				93B94D582553EB5C00281391 /* PrintLadder.swift in Sources */,
 				93B94D4F2553DA2600281391 /* Input.swift in Sources */,
 				93B94D482553D8D000281391 /* main.swift in Sources */,
+				93B94D562553E99A00281391 /* Ladder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
