@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		93B94D482553D8D000281391 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B94D472553D8D000281391 /* main.swift */; };
+		93B94D4F2553DA2600281391 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B94D4E2553DA2600281391 /* Input.swift */; };
+		93B94D542553E51300281391 /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B94D532553E51300281391 /* Exception.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		93B94D442553D8D000281391 /* LadderGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LadderGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B94D472553D8D000281391 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		93B94D4E2553DA2600281391 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		93B94D532553E51300281391 /* Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				93B94D472553D8D000281391 /* main.swift */,
+				93B94D4E2553DA2600281391 /* Input.swift */,
+				93B94D532553E51300281391 /* Exception.swift */,
 			);
 			path = LadderGame;
 			sourceTree = "<group>";
@@ -120,6 +126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B94D542553E51300281391 /* Exception.swift in Sources */,
+				93B94D4F2553DA2600281391 /* Input.swift in Sources */,
 				93B94D482553D8D000281391 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

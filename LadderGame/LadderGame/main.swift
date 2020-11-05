@@ -8,5 +8,10 @@
 
 import Foundation
 
-print("Hello, World!")
+func start() {
+    let userInput = Input()
+    let ladderGameInfo = userInput.inputNumberOfPlayer()
+    //
+}
 
+start()
