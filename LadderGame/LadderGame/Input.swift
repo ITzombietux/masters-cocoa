@@ -12,7 +12,7 @@ typealias height = Int
 typealias numberOfPlayer = Int
 
 struct Input {
-    let exception = Exception()
+    private let exception = Exception()
     
     func inputNumberOfPlayer() -> (height, numberOfPlayer) {
         print("참여할 인원수를 적어주세요. (2~8명)")
