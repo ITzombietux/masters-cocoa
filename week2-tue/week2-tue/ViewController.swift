@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         let value = Double(textField.text ?? "")
         
         var unitConverter = UnitConverter()
-        unitConverter.convert(value: value ?? 0, fromUnit: UnitLength.centimeters, toUnit: UnitLength.yards)
+        unitConverter.convert(value: value ?? 0, fromUnits: [UnitLength.centimeters, UnitLength.micrometers], toUnit: UnitLength.yards)
         resultLabel.text = "결과: \(unitConverter.result)"
     }
 }

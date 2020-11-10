@@ -8,12 +8,15 @@
 import Foundation
 
 struct UnitConverter {
-    private (set) var result: String = ""
+    private (set) var result: [String] = []
  
-    mutating func convert(value: Double, fromUnit: Dimension, toUnit: Dimension) {
-        let measurement = Measurement(value: value , unit: fromUnit)
-        let convertedValue = measurement.converted(to: toUnit)
+    mutating func convert(value: Double, fromUnits: [Dimension], toUnit: Dimension) {
         
-        result = "\(convertedValue)"
+        for fromUnit in fromUnits {
+            let measurement = Measurement(value: value , unit: fromUnit)
+            let convertedValue = measurement.converted(to: toUnit)
+            
+            result.append("\(convertedValue)")
+        }
     }
 }

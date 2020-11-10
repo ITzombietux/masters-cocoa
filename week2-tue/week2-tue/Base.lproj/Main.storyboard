@@ -34,8 +34,11 @@
                                             <action selector="convertButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4DZ-Ng-Wf3"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결과" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orc-bH-bK8">
-                                        <rect key="frame" x="110.5" y="134.5" width="29.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결과" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orc-bH-bK8">
+                                        <rect key="frame" x="0.0" y="134.5" width="250" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="K8V-UO-7eu"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
