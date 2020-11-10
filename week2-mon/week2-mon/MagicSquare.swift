@@ -7,6 +7,9 @@
 
 import Foundation
 
+//MARK:- asdfasdf
+//FIXME:- asdf
+//TODO:-sadf
 struct MagicSquare {
     func makeMagicSquare(size: Int) -> [[Int]] {
         var magicSquare = Array(repeating:Array(repeating:0, count: size), count: size)
