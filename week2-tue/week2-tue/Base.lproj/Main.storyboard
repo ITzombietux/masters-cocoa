@@ -17,9 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="eip-Mw-Zfk">
-                                <rect key="frame" x="82" y="144" width="250" height="155"/>
+                                <rect key="frame" x="82" y="370.5" width="250" height="155"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7vc-dv-zKm">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="숫자를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7vc-dv-zKm">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="26.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="uld-5A-P97"/>
@@ -42,34 +42,22 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTw-Qy-lDO">
-                                <rect key="frame" x="47" y="370" width="320" height="216"/>
-                            </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBk-YS-22p">
-                                <rect key="frame" x="0.0" y="324" width="414" height="16"/>
+                                <rect key="frame" x="0.0" y="550.5" width="414" height="16"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Lvq-Of-STD"/>
                                 </constraints>
                             </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWd-q7-SSk">
-                                <rect key="frame" x="47" y="616" width="320" height="216"/>
-                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eip-Mw-Zfk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="288-xL-LNz"/>
                             <constraint firstItem="bBk-YS-22p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5EF-K8-LWl"/>
-                            <constraint firstItem="mTw-Qy-lDO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="EWS-XJ-OGC"/>
                             <constraint firstItem="bBk-YS-22p" firstAttribute="top" secondItem="eip-Mw-Zfk" secondAttribute="bottom" constant="25" id="Giv-ad-iqT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bBk-YS-22p" secondAttribute="trailing" id="HDg-jg-axk"/>
-                            <constraint firstItem="aWd-q7-SSk" firstAttribute="centerX" secondItem="mTw-Qy-lDO" secondAttribute="centerX" id="HWB-y5-OaJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mTw-Qy-lDO" secondAttribute="trailing" constant="47" id="ktu-Vh-ipj"/>
-                            <constraint firstItem="aWd-q7-SSk" firstAttribute="top" secondItem="mTw-Qy-lDO" secondAttribute="bottom" constant="30" id="l2G-zb-RRP"/>
-                            <constraint firstItem="mTw-Qy-lDO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s67-he-urj"/>
-                            <constraint firstItem="mTw-Qy-lDO" firstAttribute="top" secondItem="bBk-YS-22p" secondAttribute="bottom" constant="30" id="w5B-bv-2jE"/>
-                            <constraint firstItem="eip-Mw-Zfk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="y6q-lF-8hT"/>
+                            <constraint firstItem="eip-Mw-Zfk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="unt-Yp-Esz"/>
                         </constraints>
                     </view>
                     <connections>
