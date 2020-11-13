@@ -29,6 +29,7 @@ struct BullsAndCows {
             return
         }
         
+        // (1,2) => strikeAndBallCount
         let strikeAndBallCount = hit(num: userNumber.input())
         
         guard strikeAndBallCount != (3,0) else {
@@ -54,7 +55,7 @@ struct BullsAndCows {
             }
         }
 
-        return hitResult
+        return hitResult //(1, 2)
     }
     
     private mutating func showGameScore() -> Bool {
@@ -73,6 +74,6 @@ struct BullsAndCows {
         comparableNumbers.append(tens)
         comparableNumbers.append(units)
         
-        return comparableNumbers
+        return comparableNumbers // [1,2,3]
     }
 }

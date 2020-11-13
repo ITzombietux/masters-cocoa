@@ -11,7 +11,7 @@ import UIKit
 struct TypingPraticeGame {
     private (set) var currentWord = ""
     private (set) var nextWord = ""
-    private (set) var gamesStep = 0
+    private (set) var gamesStep = 0 //1
     private (set) var isAnswer = false
     private var words: [String] = []
     private (set) var currentWordColor: UIColor = .black
@@ -19,20 +19,20 @@ struct TypingPraticeGame {
     let myWords = Words()
     
     mutating func loadWord() {
-        words = myWords.getWords()
-        currentWord = words[gamesStep]
+        words = myWords.getWords() // ["asdfasdf", "asdfsdaf", .... ]
+        currentWord = words[gamesStep] //0 gameStep
         nextWord = words[gamesStep + 1]
     }
     
     mutating func  setWord() {
         if currentWord == words[8] {
-            currentWord = words[gamesStep]
+            currentWord = words[gamesStep] //1
             nextWord = ""
         } else if currentWord == words[9] {
             currentWord = myWords.endGame
         } else {
-            currentWord = words[gamesStep]
-            nextWord = words[gamesStep + 1]
+            currentWord = words[gamesStep] //1
+            nextWord = words[gamesStep + 1] //2
         }
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var levelView: UIView!
@@ -18,7 +18,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //추가미션을 위한 선언
-        passwordInput.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: .editingChanged)
+        passwordInput.delegate = self
+        passwordInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("!!!!")
     }
     
     //추가미션을 위한 함수
