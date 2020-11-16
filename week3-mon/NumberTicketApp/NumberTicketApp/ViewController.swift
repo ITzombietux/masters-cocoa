@@ -18,16 +18,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateWaitingNumber(for: numberTicket)
+        updateUI()
     }
 
     @IBAction func waitingButtonTapped(_ sender: Any) {
         numberTicket.waitingNumberUp()
-        updateWaitingNumber(for: numberTicket)
+        updateUI()
     }
     
     @IBAction func completeButtonTapped(_ sender: Any) {
         numberTicket.waitingNumberDown()
+        updateUI()
+    }
+    
+    private func updateUI() {
         updateWaitingNumber(for: numberTicket)
         updateButtonState(for: numberTicket)
     }
