@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NumberTicketApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 대기 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knO-Go-jfr">
+                                <rect key="frame" x="67" y="114" width="280.5" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7l-6C-qIO">
+                                <rect key="frame" x="130.5" y="204" width="153" height="78"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="65"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zBF-uu-fl1">
+                                <rect key="frame" x="30" y="342" width="354" height="4"/>
+                            </progressView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M0f-vy-gOn">
+                                <rect key="frame" x="32" y="426" width="350" height="105"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqn-zA-7e2">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="105"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="105" id="3sx-tW-jKH"/>
+                                            <constraint firstAttribute="width" constant="170" id="zJl-J0-uIY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                                        <state key="normal" title="대기">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="waitingButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hU0-ag-uhm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y64-Gs-tmt">
+                                        <rect key="frame" x="180" y="0.0" width="170" height="105"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="170" id="FD4-ao-ojf"/>
+                                            <constraint firstAttribute="height" constant="105" id="I0c-QU-9Cv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                                        <state key="normal" title="완료"/>
+                                        <connections>
+                                            <action selector="completeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kd5-KQ-0GZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zBF-uu-fl1" secondAttribute="trailing" constant="30" id="B3R-wq-Vpb"/>
+                            <constraint firstItem="zBF-uu-fl1" firstAttribute="top" secondItem="t7l-6C-qIO" secondAttribute="bottom" constant="60" id="Ku6-0j-z0u"/>
+                            <constraint firstItem="knO-Go-jfr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q5m-jw-6rF"/>
+                            <constraint firstItem="zBF-uu-fl1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="T79-kc-TGo"/>
+                            <constraint firstItem="M0f-vy-gOn" firstAttribute="centerX" secondItem="knO-Go-jfr" secondAttribute="centerX" id="Yj8-jG-yzx"/>
+                            <constraint firstItem="M0f-vy-gOn" firstAttribute="top" secondItem="zBF-uu-fl1" secondAttribute="bottom" constant="80" id="aYw-JM-h5f"/>
+                            <constraint firstItem="knO-Go-jfr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="djj-bG-Ysr"/>
+                            <constraint firstItem="t7l-6C-qIO" firstAttribute="centerX" secondItem="knO-Go-jfr" secondAttribute="centerX" id="q1l-dw-ODA"/>
+                            <constraint firstItem="zBF-uu-fl1" firstAttribute="centerX" secondItem="knO-Go-jfr" secondAttribute="centerX" id="r0a-iM-XiY"/>
+                            <constraint firstItem="t7l-6C-qIO" firstAttribute="top" secondItem="knO-Go-jfr" secondAttribute="bottom" constant="30" id="uow-j2-Hyf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="completeButtom" destination="Y64-Gs-tmt" id="q4C-9J-AWQ"/>
+                        <outlet property="waitingButton" destination="Zqn-zA-7e2" id="Ycz-uQ-lbV"/>
+                        <outlet property="waitingNumberLabel" destination="t7l-6C-qIO" id="CZr-UN-yp3"/>
+                        <outlet property="waitingPercent" destination="zBF-uu-fl1" id="dz4-Ep-mJx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="80.357142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
