@@ -8,7 +8,7 @@
 import Foundation
 
 func main() {
-    let myBitcount = Bitcount(with: 4)
+    let myBitcount = Bitcount(with: 5)
     print(myBitcount.find(by: 2))
 }
 

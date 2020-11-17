@@ -34,7 +34,7 @@ class Matrix {
     func product(with other: Matrix) -> Matrix {
         let result = Matrix()
         
-        result.a = (self.a * other.c) + (self.b * other.c)
+        result.a = (self.a * other.a) + (self.b * other.c)
         result.b = (self.a * other.b) + (self.b * other.d)
         result.c = (self.c * other.a) + (self.d * other.c)
         result.d = (self.c * other.b) + (self.d * other.d)
