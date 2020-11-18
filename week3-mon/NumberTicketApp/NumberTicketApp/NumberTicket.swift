@@ -19,7 +19,7 @@ struct NumberTicket {
         let ratio = Float(waitingNumber) / Float(20)
         return Percent(ratio: ratio)
     }
-    
+
     mutating func waitingNumberUp() {
         if waitingNumber < 20 {
             waitingNumber += 1
