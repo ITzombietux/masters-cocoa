@@ -31,10 +31,9 @@ struct MatchingParentheses {
         }
     }
     
-    //count = 3 () () () ((( )))  ,5 ((((( )))))
     func generate(with count: Int) -> [String] {
         var correctBracketArray = [String]()
-        let outOfOrderBracket = String(repeating: open, count: count) + String(repeating: close, count: count) // ((((())))
+        let outOfOrderBracket = String(repeating: open, count: count) + String(repeating: close, count: count)
         let outOfOrderBracketArray: [String] = outOfOrderBracket.map { String($0) }
         
         func permute(list: [String], minStringLen: Int) -> Set<String> {
@@ -52,9 +51,10 @@ struct MatchingParentheses {
                 }
             }
 
-            var correctBracketSet = Set<String>()
-            permute(fromList: list, toList:[], minStringLen: minStringLen, set: &correctBracketSet)
-            return correctBracketSet
+            var bracketSet = Set<String>()
+            permute(fromList: list, toList:[], minStringLen: minStringLen, set: &bracketSet)
+            
+            return bracketSet
         }
         
         let permutedBracketArray = permute(list: outOfOrderBracketArray, minStringLen: outOfOrderBracket.count)
