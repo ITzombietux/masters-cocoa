@@ -9,8 +9,8 @@ import Foundation
 
 func main() {
     let myMatchingParentheses = MatchingParentheses(with: .curly)
-    print(myMatchingParentheses.generate(with: 3))
-    print(myMatchingParentheses.analyze(with: "{}{}"))
+    myMatchingParentheses.generate(with: 3)
+    print(myMatchingParentheses.analyze(with: "}{}"))
 }
 
 main()

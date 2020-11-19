@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonClick(_ sender: UIButton) {
-        displayLabel.text! = ""
         displayLabel.text! += sender.currentTitle ?? ""
         calculator.currentNumber = Double(displayLabel.text ?? "") ?? 0.0
         calculator.numberCalculate()

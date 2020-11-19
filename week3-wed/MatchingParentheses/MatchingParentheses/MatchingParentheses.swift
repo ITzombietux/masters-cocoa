@@ -31,16 +31,18 @@ struct MatchingParentheses {
         }
     }
     
+    //count = 3 () () () ((( )))  ,5 ((((( )))))
     func generate(with count: Int) -> [String] {
         var correctBracketArray = [String]()
-        let outOfOrderBracket = String(repeating: open, count: count) + String(repeating: close, count: count)
+        let outOfOrderBracket = String(repeating: open, count: count) + String(repeating: close, count: count) // ((((())))
         let outOfOrderBracketArray: [String] = outOfOrderBracket.map { String($0) }
         
-        func permute(list: [String], minStringLen: Int = 2) -> Set<String> {
+        func permute(list: [String], minStringLen: Int) -> Set<String> {
             func permute(fromList: [String], toList: [String], minStringLen: Int, set: inout Set<String>) {
                 if toList.count >= minStringLen {
                     set.insert(toList.joined(separator: ""))
                 }
+                
                 if !fromList.isEmpty {
                     for (index, item) in fromList.enumerated() {
                         var newFrom = fromList
@@ -69,6 +71,7 @@ struct MatchingParentheses {
     func analyze(with value: String) -> Bool {
         let pairs: [Character: Character] = [self.open : self.close]
         var stack: [Character] = []
+        
         for char in value {
             if let match = pairs[char] {
                 stack.append(match)

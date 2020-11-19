@@ -10,7 +10,7 @@ import Foundation
 class Calculator {
     var lastOperation = 0
     var currentNumber = 0.0
-    private(set) var initResult = "0"
+    private(set) var initResult = ""
     private(set) var isCalcPress = false
     private(set) var fixedStackElementCount = 0
     var stack = Stack()
@@ -33,11 +33,11 @@ class Calculator {
         
         return Double(floor(1000*total)/1000)
     }
-    
+     
     func calculateAndReturnOperation() {
         if stack.myStack.count >= 2 {
             currentNumber = calculate(firstNumber: stack.pop() ?? 0.0, secondNumber: stack.pop() ?? 0.0, operation: self.lastOperation)
-            stack.push(currentNumber)
+            stack.push(currentNumber) // 6.0
         }
     }
     
