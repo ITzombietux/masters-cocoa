@@ -43,11 +43,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var fiveOfTensMinuteLbl: UILabel!
     @IBOutlet weak var secondLbl: UILabel!
     
+    private var hourLbls = [UILabel]()
+    private var minuteLbls = [UILabel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        hourLbls = [zeroLbl, oneHourLbl, twoHourLbl, threeHourLbl, fourHourLbl, fiveHourLbl, firstSixHourLbl, secondSixHourLbl, firstSevenHourLbl, secondSevenHourLbl, firstEightHourLbl, secondEightHourLbl, firstNineHourLbl, secondNineHourLbl, tenHourLbl]
+        
+        minuteLbls = [zeroLbl, oneMinuteLbl, twoMinuteLbl, threeMinuteLbl, fourMinuteLbl, fiveMinuteLbl, sixMinuteLbl, sevenMinuteLbl, eightMinuteLbl, nineMinuteLbl, tenMinuteLbl, twoOfTensMinuteLbl, threeOfTensMinuteLbl, fourOfTensMinuteLbl, fiveOfTensMinuteLbl]
+        
         timer()
     }
-    
+
     func timer() {
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(update), userInfo: nil, repeats: true )
     }
@@ -66,14 +73,14 @@ class ViewController: UIViewController {
         let hangeulSigye = HangeulSigye(apPm: dateFormatter.string(from: date), hour: hour, minute: minute, second: second)
         let hangeulSigyeTime = hangeulSigye.make()
     
-        displayAmPm(hangeulSigyeTime[0])
-        displayHour(hangeulSigyeTime[1])
-        displayMinute(hangeulSigyeTime[2])
-        displaySecond(hangeulSigyeTime[3])
-        displaySunOrMoon(hangeulSigyeTime[4])
+        displayAmPm(amPm: hangeulSigyeTime[0])
+        displayHour(hour: hangeulSigyeTime[1], hourLbls: self.hourLbls)
+        displayMinute(minute: hangeulSigyeTime[2], minuteLbls: self.minuteLbls)
+        displaySecond(second: hangeulSigyeTime[3])
+        displaySunOrMoon(sunOrMoon: hangeulSigyeTime[4])
     }
     
-    private func displayAmPm(_ amPm: String) {
+    private func displayAmPm(amPm: String) {
         if amPm == "AM" {
             amLbl.textColor = .white
             pmLbl.textColor = .systemGray
@@ -83,20 +90,19 @@ class ViewController: UIViewController {
         }
     }
     
-    private func displayHour(_ hour: String) {
-        let hourLbls: [UILabel?] = [zeroLbl, oneHourLbl, twoHourLbl, threeHourLbl, fourHourLbl, fiveHourLbl, firstSixHourLbl, secondSixHourLbl, firstSevenHourLbl, secondSevenHourLbl, firstEightHourLbl, secondEightHourLbl, firstNineHourLbl, secondNineHourLbl, tenHourLbl]
+    private func displayHour(hour: String, hourLbls: [UILabel]) {
         let hourChars = hour.map { String($0) }
         
         for hourLbl in hourLbls {
-            hourLbl?.textColor = .systemGray
+            hourLbl.textColor = .systemGray
             
             for hourChar in hourChars {
-                if hourLbl?.text == hourChar {
-                    hourLbl?.textColor = .white
+                if hourLbl.text == hourChar {
+                    hourLbl.textColor = .white
                     
-                    if hourLbl?.tag == 10 {
+                    if hourLbl.tag == 10 {
                         firstEightHourLbl.textColor = .systemGray
-                    } else if hourLbl?.tag == 11 {
+                    } else if hourLbl.tag == 11 {
                         firstSixHourLbl.textColor = .systemGray
                     }
                 }
@@ -104,16 +110,15 @@ class ViewController: UIViewController {
         }
     }
     
-    private func displayMinute(_ minute: String) {
-        let minuteLbls: [UILabel?] = [zeroLbl, oneMinuteLbl, twoMinuteLbl, threeMinuteLbl, fourMinuteLbl, fiveMinuteLbl, sixMinuteLbl, sevenMinuteLbl, eightMinuteLbl, nineMinuteLbl, tenMinuteLbl, twoOfTensMinuteLbl, threeOfTensMinuteLbl, fourOfTensMinuteLbl, fiveOfTensMinuteLbl]
+    private func displayMinute(minute: String, minuteLbls: [UILabel]) {
         let minuteChars = minute.map { String($0) }
         
         for minuteLbl in minuteLbls {
-            minuteLbl?.textColor = .systemGray
+            minuteLbl.textColor = .systemGray
             
             for minuteChar in minuteChars {
-                if minuteLbl?.text == minuteChar {
-                    minuteLbl?.textColor = .white
+                if minuteLbl.text == minuteChar {
+                    minuteLbl.textColor = .white
                     
                     minuteExceptionHandling(minute: minute, minuteChars: minuteChars)
                 }
@@ -121,7 +126,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func displaySecond(_ second: String) {
+    private func displaySecond(second: String) {
         let secondChars = second.map { String($0) }
         switch second.count {
         case 2:
@@ -133,7 +138,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func displaySunOrMoon(_ sunOrMoon: String) {
+    private func displaySunOrMoon(sunOrMoon: String) {
         self.sunOrMoon.text = sunOrMoon
     }
     
