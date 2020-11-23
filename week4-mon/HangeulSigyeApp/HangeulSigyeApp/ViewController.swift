@@ -81,13 +81,14 @@ class ViewController: UIViewController {
     }
     
     private func displayAmPm(amPm: String) {
-        if amPm == "AM" {
-            amLbl.textColor = .white
-            pmLbl.textColor = .systemGray
-        } else {
+        guard amPm == "AM" else {
             amLbl.textColor = .systemGray
             pmLbl.textColor = .white
+            return
         }
+        
+        amLbl.textColor = .white
+        pmLbl.textColor = .systemGray
     }
     
     private func displayHour(hour: String, hourLbls: [UILabel]) {
@@ -99,12 +100,7 @@ class ViewController: UIViewController {
             for hourChar in hourChars {
                 if hourLbl.text == hourChar {
                     hourLbl.textColor = .white
-                    
-                    if hourLbl.tag == 10 {
-                        firstEightHourLbl.textColor = .systemGray
-                    } else if hourLbl.tag == 11 {
-                        firstSixHourLbl.textColor = .systemGray
-                    }
+                    minuteExceptionHandling(hourChars: hourChars)
                 }
             }
         }
@@ -140,6 +136,14 @@ class ViewController: UIViewController {
     
     private func displaySunOrMoon(sunOrMoon: String) {
         self.sunOrMoon.text = sunOrMoon
+    }
+    
+    private func minuteExceptionHandling(hourChars: [String]) {
+        if hourChars.contains("섯") {
+            firstEightHourLbl.textColor = .systemGray
+        } else {
+            firstSixHourLbl.textColor = .systemGray
+        }
     }
     
     private func minuteExceptionHandling(minute: String, minuteChars: [String]) {
